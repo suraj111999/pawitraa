@@ -79,31 +79,36 @@ nav a:hover{
 .carousel-indicators li.active {
   background-color: #698f3f;
   }
-.item img{
+.item_1 img{
   width:100%;
 }
 .line{
   height:7px;
-  background: linear-gradient( to            left,#698f3f,#fca311 , #698f3f );
+  background: linear-gradient( to left,#698f3f,#fca311 , #698f3f );
 }
 /*what we offer*/
 #service{
   width:100%;
   height:100%;
-}
-.flex-container1{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
   background:#e5e5e5;
 }
-#service article{
-  width:100%;
+.flex-container1{
+  width:80%;
   margin:auto;
- text-align:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+}
+#service article{
+  margin:auto;
+  text-align:center;
   padding-top:50px;
-  transition:.5s;
+  transition:.5s ease;
   padding-bottom:50px;
+}
+#service .research{
+  display:none;
 }
 .icon .fas {
   font-size:50px;
@@ -113,10 +118,10 @@ nav a:hover{
   font-weight:600;
 }
 .text{
-  width:40%;
+  width:90%;
   margin:0 auto;
   margin-bottom:20px;
-  text-align:justify;
+  text-align:center;
 }
 #service article:hover{
   background:#698F3F;
@@ -137,6 +142,7 @@ nav a:hover{
     background-size: cover;
     padding: 60px 0 40px 0;
     position:relative;
+    margin-bottom: 50px;
 }
 /* #about_us::after{
     content: '';
@@ -149,7 +155,7 @@ nav a:hover{
    } */
 
 
-#about_us h3{
+.section_heading h3{
     padding-top:30px;
     font-size: 32px;
     color: #111;
@@ -158,7 +164,7 @@ nav a:hover{
     position: relative;
     padding-bottom:15px;
 }
-#about_us h3::before{
+.section_heading h3::before{
   content: '';
     position: absolute;
     display: block;
@@ -169,7 +175,7 @@ nav a:hover{
     left: calc(50% - 60px);
 
 }
-#about_us h3::after{
+.section_heading h3::after{
     content: '';
     position: absolute;
     display: block;
@@ -199,7 +205,9 @@ nav a:hover{
   border:8px solid #698f3f;
   overflow:hidden;
   border-radius:10px;
-  transition:transform 0.2s;
+}
+#img img{
+  transition:transform 1s;
 }
 #img:hover img{
   transform:scale(1.5) !important;
@@ -356,6 +364,72 @@ flex:50%;
     text-decoration:none;
     color: #fff;
 }
+/*section_heading*/
+.section-center {
+    display:flex;
+    max-width: 1170px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    justify-content:space-between;
+}
+.contact-info{
+  margin:60px 0;
+}
+.contact-form{
+  margin-left:150px;
+  width:50%;
+}
+.contact-title {
+
+   color:#698f3f;
+  letter-spacing:12px;
+    text-transform: uppercase;
+    font-size:18px;
+    font-weight:600;
+/*     margin-bottom: 1px;
+    margin-top: 1; */
+}
+
+.contact-text {
+    font-size:15px;
+    color:#000;
+    text-transform: uppercase;
+}
+
+ form .form-control{
+    text-transform:uppercase;
+    display: block;
+    background:transparent;
+    width:100%;
+    border: none;
+    border-bottom: 2px solid #698f3f;
+    margin: 40px 0;
+    padding: 5px 0;
+    box-shadow:none;
+    font-size:10px;
+    font-weight: bold;
+}
+form .form-control:hover,form .form:focus, form .form-control:link,form .form-control:visited,form .form-control:active{
+    box-shadow:none !important;
+    border:none;
+    border-bottom: 2px solid #698f3f;
+    outline:none !important;
+}
+::placeholder{
+  color:#698f3f !important;
+}
+.main-btn {
+    display: inline-block;
+    background: #698f3f;
+    text-transform: uppercase;
+    padding: 0.8rem 1.2rem;
+    color: #3a3e3b;
+    font-weight: bold;
+    outline: 0.2rem solid #698f3f;
+    outline-offset: 4px;
+    cursor: pointer;
+    margin-top: 2rem;
+}
 /*--------------------------------------
 ------------------------------------
 --------------------------------*/
@@ -366,7 +440,7 @@ footer{
 footer p{
 /*   width:100%; */
   text-align:justify;
-  margin-left:30px;
+  margin-left:70px;
   width:90%;
   font-size: 20px;
   color:rgb(189, 179, 179);
@@ -380,7 +454,7 @@ footer .row{
     color: #111;
     text-align: center;
      margin-bottom:25px;
-    text-shadow:1px 1px 3px #698f3f;
+    /* text-shadow:1px 1px 3px #698f3f; */
     font-weight: 700;
     position: relative;
     padding-bottom:15px;
@@ -425,12 +499,13 @@ footer .col{
     font-size:20px;
     padding-left:2px;
     padding:2px 0;
-    margin-left:130px;
+    margin-left:110px;
 }
 .social-icons-1{
   display:flex;
   justify-content:center;
   margin-top:-10px;
+  margin-left:-35px;
 }
 .social-icons-1 li{
     list-style:none;
@@ -482,15 +557,15 @@ a:hover .office ,a:hover .contact,a:hover .mail,a:hover .facebook,a:hover .twitt
 
 
 /*------------------about_us section-------------------------------*/
-#about_us_container{
+#main_container{
   position:relative;
 }
 
-#about_us_container_photo img{
+#main_container_photo img{
   width:100%;
 }
 
-#about_us_container_text{
+#main_container_text{
   position: absolute;
    z-index: 1;
    left: 0;
@@ -499,46 +574,13 @@ a:hover .office ,a:hover .contact,a:hover .mail,a:hover .facebook,a:hover .twitt
    bottom:0px;
    text-align: right;
 }
-#about_us_container_text h3{
+#main_container_text h3{
     font-size: 60px;
     color:#698f3f;
 }
 .line{
   height:7px;
-  background: linear-gradient( to            left,#698f3f,#fca311 , #698f3f );
-}
-
-
-#about_us_content h3{
-    padding-top:30px;
-    font-size: 32px;
-    color: #111;
-    text-align: center;
-    font-weight: 700;
-    position: relative;
-    padding-bottom:15px;
-}
-#about_us_content h3::before{
-  content: '';
-    position: absolute;
-    display: block;
-    width: 120px;
-    height: 1px;
-    background-color:#ddd;
-    bottom:1px;
-    left: calc(50% - 60px);
-
-}
-#about_us_content h3::after{
-    content: '';
-    position: absolute;
-    display: block;
-    width: 40px;
-    height: 3px;
-    background:#698F3F;
-    bottom: 0;
-    left:calc(50% - 20px)
-
+  background: linear-gradient( to left,#698f3f,#fca311 , #698f3f );
 }
 
 #about_us_para{
@@ -570,6 +612,142 @@ a:hover .office ,a:hover .contact,a:hover .mail,a:hover .facebook,a:hover .twitt
 #about_us_content_2 a:hover{
   color:black;
   font-size:20px;
+}
+/*------------------internship section-------------------------------*/
+
+.line{
+  height:7px;
+  background: linear-gradient( to  left,#698f3f,#fca311 , #698f3f );
+}
+
+#internship_flex_container{
+  display:flex;
+  margin-bottom:-30px;
+}
+.internship_card{
+    background:#fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.55);
+    margin: 3%;
+    width:400px;
+    border:2px solid #698f3f;
+    border-radius: 6px;
+    padding: 0 17px 45px 17px;
+    height:270px;
+}
+.internship_card:hover{
+  background-color:#698f3f;
+  color:white;
+}
+.position h3{
+  font-size:18px;
+  font-weight:900;
+}
+.location,.education,.experience,.skills{
+  display:flex;
+}
+.requirements h6{
+  font-size:17px;
+  }
+.internship_card .fas{
+    font-size:12px;
+    margin-right:10px;
+    position: relative;
+    top:7px;
+}
+.fa-graduation-cap{
+  position:relative;
+  left:-2px;
+}
+.fa-laptop-code{
+  left:-3px;
+}
+.apply_section{
+  margin-top:25px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.posted_date_container{
+  display:flex;
+  margin-top:-12px;
+}
+.posted_last{
+  margin-top:-17px;
+}
+.posted_date h6{
+ font-size:10px ;
+}
+.fa-calendar-check{
+  font-size:10px !important;
+  position:relative !important;
+  top:3px !important;
+}
+
+.apply_button a{
+    background:#fff;
+    border-radius:4px;
+    color:#698f3f;
+    font-size: 14px!important;
+    font-weight: 700;
+    padding:4px 20px;
+    text-align: center;
+}
+
+.apply_button a:hover{
+  text-decoration:none;
+  color:#698f3f;
+}
+
+
+/*  -------------------------past intern-------------------------------------------------*/
+#past_intern{
+    background-color:#fff;
+    margin-bottom:40px;
+}
+#interns_list {
+/*   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; */
+  margin-top:40px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#interns_list td, #customers th {
+  border: 1px solid #ddd;
+  color:#000;
+  padding: 8px;
+}
+
+#interns_list tr:nth-child(even){background-color: #f2f2f2;}
+
+#interns_list tr:hover {background-color: #ddd;}
+
+#interns_list th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #698f3f;
+  color: white;
+}
+td a{
+  text-decoration:none;
+  color:#000;
+  cursor:pointer;
+}
+td a:hover{
+  text-decoration:none;
+  color:#000;
+}
+/*----------gallery.html----------*/
+.gallery_container{
+ margin-top:40px;
+ margin-bottom: 40px;
+}
+.gallery_container .row > div {
+   padding:3px;
+}
+.gallery_container .row img{
+ width:100%;
+ height:200px;
 }
 
 
@@ -622,18 +800,17 @@ nav ul{
    height:300px
   }
 
-.flex-container1{
-  display:block;
-}
+  .flex-container1{
+    display:block;
+    width:100%;
+  }
 #service article{
  padding:25px 0;
   }
   .heading{
     font-size:20px;
   }
-.text{
-  width:50%;
-}
+
 #service .know_more{
   padding:4px 8px;
 }
@@ -737,6 +914,18 @@ text-align:center;
 .service_btn {
     font-size:10px;
 }
+
+.section-center{
+   display:block;
+ }
+ .contact-info {
+   width: 100%;
+   margin-left: 40px;
+ }
+.contact-form {
+   margin-left: 40px;
+   width: 80%;
+}
 footer .row{
   display:block;
 }
@@ -795,16 +984,16 @@ footer .col{
   #last{
     font-size:10px;
   }
-  #about_us_container img{
+  #main_container img{
     height:300px;
   }
-  #about_us_container_text{
+  #main_container_text{
     right:15px;
   }
-    #about_us_container_text h3{
+    #main_container_text h3{
     font-size:30px;
   }
-  #about_us_content h3{
+  .section_heading h3{
     margin-top:-40px;
     font-size:25px;
   }
@@ -815,15 +1004,35 @@ footer .col{
   width:90%;
 }
 
+/*-----------------internship_section------------------------*/
+  #past_intern{
+    margin-top:80px;
+  }
+  #internship_flex_container{
+    display:block;
+    margin-top:20px;
+
+  }
+  #internship_flex_container .internship_card{
+    margin:0 auto;
+    margin-bottom:30px;
+    width:300px;
+  }
+
+  .gallery_container{
+    width:90%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px)  and (max-width:992px) {
  nav ul li{
  margin-right:0px;
   }
-  .text{
-    width:75%;
-  }
+  .flex-container1{
+     width:95%;
+   }
   #flex-container2{
     width:100%;
   }
@@ -856,22 +1065,46 @@ footer .col{
     margin-right:80px;
 
 }
+.contact-form{
+   margin-left:0px;
+ }
+ form .form-control{
+   width:80%;
+ }
   .footer-nav li{
+    font-size:13px;
     margin-left:0px;
   }
   .social-icons li{
+    font-size:13px;
     margin-left:0px;
   }
   footer p{
     width:100%;
+    font-size:13px;
     text-align:left;
     margin-left:0px;
   }
-  #about_us_container_text h3{
-   font-size: 50px;
- }
- #about_us_para{
- max-width:700px;
+  .office, .contact, .mail, .facebook, .twitter, .youtube {
+    font-size: 19px
+  }
+#main_container_text h3{
+    font-size: 50px;
+  }
+  #about_us_para{
+  max-width:700px;
+}
+ /*---------internship_section--------------------*/
+  #internship_flex_container{
+  flex-wrap:wrap;
+  margin-left:80px;
+}
+.internship_card{
+    width:250px
+}
+.gallery_container{
+  width:91%;
+  padding-left: 0px;
 }
 }
 
@@ -882,9 +1115,6 @@ footer .col{
  margin-right:35px;
 }
 
-.text{
-   width:60%;
-  }
 #content{
  flex:75%;
   }
@@ -908,20 +1138,29 @@ footer .col{
   #publication{
     width:50%;
   }
+  .contact-form{
+    margin-left:0;
+  }
 .footer-nav li {
+  font-size:13px;
   margin-left:30px;
   }
   footer p{
+    font-size:13px;
     margin-left:0;
   }
 .social-icons li{
   width:100%;
+  font-size:13px;
   margin-left:30px;
   }
+  .office, .contact, .mail, .facebook, .twitter, .youtube {
+    font-size: 19px
+  }
   .social-icons-1{
-  margin-left:-30px;
+  margin-left:-50px;
 }
-#about_us_container_text h3{
+#main_container_text h3{
     font-size: 50px;
   }
   #about_us_para{
@@ -929,9 +1168,13 @@ footer .col{
 }
 }
 
+/* Large devices (4k resolution) */
 @media only screen and (min-width:2000px){
   .footer-nav li{
     margin-left:290px;
+  }
+  .flex-container1{
+    width:60%
   }
   .social-icons li {
     margin-left:300px;
@@ -940,4 +1183,22 @@ footer .col{
     width: 23%;
 }
 
+  /*-----------------internship_section------------------------*/
+  #latest_internship{
+    width:1500px;
+    margin:0 auto;
+  }
+}
+
+
+
+@media (min-width: 768px){
+    .hash-list.cols-3 > li:nth-last-child(-n+3) {
+        border-bottom: none;
+    }
+}
+@media (min-width: 768px){
+    .hash-list.cols-3 > li {
+        width: 33.3333%;
+    }
 }
